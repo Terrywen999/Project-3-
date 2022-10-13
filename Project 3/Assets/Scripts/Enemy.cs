@@ -6,15 +6,12 @@ public class Enemy : Entity
 {
     public int damage = 10;
 
-    public int bulletDamage = 1;
-
-    
 
     public GameObject player;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player player = collision.collider.GetComponent<Player>();
+        Player player = collision.GetComponent<Player>();
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("DAMAGE");
