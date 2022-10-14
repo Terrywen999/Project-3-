@@ -9,6 +9,40 @@ public class Enemy : Entity
 
     public GameObject player;
 
+    public Transform playerTrans;
+
+    private Rigidbody2D rb;
+
+    private Vector2 movement;
+    public  float moveSpeed =5f;
+
+    //private float nextSpawnTime = 1f;
+
+    //public GameObject enemyPrefab;
+    private void Start()
+    {
+        rb = this.GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player");
+        playerTrans = GameObject.Find("Player").GetComponent<Transform>();
+    }
+
+    private void Update()
+    {
+        Vector3 direction = playerTrans.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = angle;
+        direction.Normalize();
+        movement = direction;
+    }
+
+    private void FixedUpdate()
+    {
+        moveCharacter(movement);
+    }
+    void moveCharacter(Vector2 direction)
+    {
+        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Player player = collision.GetComponent<Player>();
@@ -17,6 +51,9 @@ public class Enemy : Entity
             Debug.Log("DAMAGE");
             player.TakeDamage(damage);
             Destroy(gameObject);
+            
         }
     }
+
+    
 }

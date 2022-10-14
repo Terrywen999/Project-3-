@@ -149,3 +149,4 @@ MonoBehaviour:
   health: 20
   damage: 10
   player: {fileID: 0}
+  playerTrans: {fileID: 0}

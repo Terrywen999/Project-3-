@@ -43,6 +43,7 @@ public class Bullet : Entity
         if (collision.gameObject.CompareTag("Enemy"))
         {
             enemy.TakeDamage(bulletDamage);
+            Destroy(gameObject);
         }
             
     }
