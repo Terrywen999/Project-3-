@@ -23,6 +23,7 @@ public class Bullet : Entity
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
+        //bullet hit wall and rebound.
         if (collision.gameObject.CompareTag("Rebound"))
         {
             var speed = lastVelocity.magnitude;
@@ -31,20 +32,30 @@ public class Bullet : Entity
             rb.velocity = direction * Mathf.Max(speed, 0f);
             bulletDamage += 3;
         }
+        //bullet hit wall and rebound.END
 
-       
-
+        //bullet hit player and lose 1 health. 
+        Player player = collision.gameObject.GetComponent<Player>();
+        if (collision.gameObject.CompareTag("Player"))
+        {  
+            player.TakeDamage(1);
+            Destroy(gameObject);
+        }
+        //bullet hit player and lose 1 health END 
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        //bullet hit enemy
         Enemy enemy = collision.GetComponent<Enemy>();
+        
         if (collision.gameObject.CompareTag("Enemy"))
         {
             enemy.TakeDamage(bulletDamage);
+
             Destroy(gameObject);
         }
-            
+        //bullet hit enemy END.
     }
 }

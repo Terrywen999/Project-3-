@@ -5,10 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static Vector2 Position;
-
+	
 	public float startMoveSpeed = 5f;
 	private float moveSpeed;
 	public float moveSmooth = .3f;
+
 
 	private Rigidbody2D rb;
 
@@ -17,25 +18,53 @@ public class PlayerController : MonoBehaviour
 
 	Vector2 mousePos = Vector2.zero;
 
-	// Use this for initialization
-	void Start () {
+
+	//dash
+	public float dashBoost;
+	private float dashTime;
+	public float startDashTime;
+	private bool once;
+	
+    
+
+    void Start () {
 		rb = GetComponent<Rigidbody2D>();
 	}
-	
+
 	// Update is called once per frame
-	void Update () {
-		movement.x = Input.GetAxisRaw("Horizontal");
-		movement.y = Input.GetAxisRaw("Vertical");
+	void Update() {
+				movement.x = Input.GetAxisRaw("Horizontal");
+				movement.y = Input.GetAxisRaw("Vertical");
 
-		mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+				mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-		transform.localScale = Vector3.one;
-		moveSpeed = startMoveSpeed ;
+				transform.localScale = Vector3.one;
+				moveSpeed = startMoveSpeed;
+
+        //dash
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+			moveSpeed += dashBoost;
+			Debug.Log(dashTime);
+			once = true;
+			dashTime = startDashTime;
+        }
+		if(dashTime <0 && once == true)
+        {
+			moveSpeed -= dashBoost;
+			once = false;
+        }
+        else
+        {
+			dashTime -= Time.deltaTime;
+        }
+		//dashEnd
+		
 	}
 
 	private void FixedUpdate()
 	{
-		
+      
 
 		Vector2 desiredVelocity = movement * moveSpeed;
 		rb.velocity = Vector2.SmoothDamp(rb.velocity, desiredVelocity, ref velocity, moveSmooth);
@@ -45,5 +74,6 @@ public class PlayerController : MonoBehaviour
 		rb.rotation = angle;
 
 		Position = rb.position;
+				
 	}
 }

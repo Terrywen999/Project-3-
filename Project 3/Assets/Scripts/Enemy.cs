@@ -6,6 +6,7 @@ public class Enemy : Entity
 {
     public int damage = 10;
 
+   
 
     public GameObject player;
 
@@ -16,6 +17,12 @@ public class Enemy : Entity
     private Vector2 movement;
     public  float moveSpeed =5f;
 
+    //enemy shoot 
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+    public float bulletForce = 20f;
+    private float nextTimeToFire = .5f;
+    public float fireRate = 1f;
     //private float nextSpawnTime = 1f;
 
     //public GameObject enemyPrefab;
@@ -38,6 +45,7 @@ public class Enemy : Entity
     private void FixedUpdate()
     {
         moveCharacter(movement);
+        EnemyShoot();
     }
     void moveCharacter(Vector2 direction)
     {
@@ -51,9 +59,21 @@ public class Enemy : Entity
             Debug.Log("DAMAGE");
             player.TakeDamage(damage);
             Destroy(gameObject);
-            
         }
     }
 
-    
+    void EnemyShoot()
+    {
+        if (Time.time >= nextTimeToFire)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+            Destroy(bullet, 5f);
+
+            nextTimeToFire = Time.time + 1f / fireRate;
+        }
+    }
+
+
 }
