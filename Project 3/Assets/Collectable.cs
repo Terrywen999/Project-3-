@@ -6,6 +6,7 @@ public class Collectable : MonoBehaviour
 {
     private Inventory inventory;
     public GameObject itemButton;
+    public Item itemType;
 
     private void Start()
     {
@@ -16,16 +17,20 @@ public class Collectable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            for (int i = 0; i < inventory.slots.Length; i++)
-            {
-                if (inventory.isFull[i] == false)
-                {
-                    inventory.isFull[i] = true;
-                    Instantiate(itemButton, inventory.slots[i].transform, false);
-                    Destroy(gameObject);
-                    break;
-                }
-            }
+            //for (int i = 0; i < inventory.slots.Length; i++)
+            //{
+            //    if (inventory.isFull[i] == false)
+            //    {
+            //        inventory.isFull[i] = true;
+            //        inventory.AddItem(itemType);
+            //        Instantiate(itemButton, inventory.slots[i].transform, false);
+            //        Destroy(gameObject);
+            //        break;
+            //    }
+            //}
+
+            inventory.AddItem(itemType);
+            Destroy(gameObject);
         }
     }
 }

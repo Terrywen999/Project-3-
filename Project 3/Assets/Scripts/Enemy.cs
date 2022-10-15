@@ -30,11 +30,15 @@ public class Enemy : Entity
     {
         rb = this.GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
-        playerTrans = GameObject.Find("Player").GetComponent<Transform>();
+        playerTrans = player?.GetComponent<Transform>();
     }
 
     private void Update()
     {
+        if(playerTrans == null)
+        {
+            return;
+        }
         Vector3 direction = playerTrans.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
