@@ -10,8 +10,8 @@ public class InventoryUI : MonoBehaviour
 
     void Start()
     {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-        inventory.itemAdd.AddListener(OnItemAdd);
+        //inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        //inventory.itemAdd.AddListener(OnItemAdd);
     }
 
     void OnItemAdd(int index, int number)

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8813730166188387964}
   - component: {fileID: 8813730166188387963}
-  - component: {fileID: 8813730166188387962}
   - component: {fileID: 8813730166188387965}
   m_Layer: 0
   m_Name: Wall_normal
@@ -86,20 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8813730166188387962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8813730166188387961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7398b268073e62c44be32f0bec7044bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemButton: {fileID: 3586959077115096159, guid: 06e3f2bf65a3ef94f9ae43186a89cec9, type: 3}
-  itemType: 0
 --- !u!58 &8813730166188387965
 CircleCollider2D:
   m_ObjectHideFlags: 0

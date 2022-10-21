@@ -21,19 +21,19 @@ public class Player : Entity
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             currSelect = Item.WallNormal;
         }
-        if (Input.GetKey(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             currSelect = Item.WallNormal;
         }
-        if (Input.GetKey(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             currSelect = Item.WallNormal;
         }
-        if (Input.GetKey(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             currSelect = Item.WallNormal;
         }
@@ -41,6 +41,7 @@ public class Player : Entity
         if (Input.GetMouseButton(0) && currSelect != Item.None)
         {
             //matched item
+
             //Instantiate()
 
             //Inventory remove
