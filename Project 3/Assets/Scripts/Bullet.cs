@@ -7,6 +7,8 @@ public class Bullet : Entity
     private Rigidbody2D rb;
     Vector3 lastVelocity;
 
+    public float speed = 5f;
+
     int hitTimes;
 
     public int bulletDamage = 1;
@@ -26,7 +28,7 @@ public class Bullet : Entity
         //bullet hit wall and rebound.
         if (collision.gameObject.CompareTag("Rebound"))
         {
-            var speed = lastVelocity.magnitude;
+            //var speed = lastVelocity.magnitude;
             var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
 
             rb.velocity = direction * Mathf.Max(speed, 0f);

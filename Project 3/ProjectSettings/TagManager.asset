@@ -7,6 +7,7 @@ TagManager:
   - Rebound
   - Enemy
   - FirePoint
+  - Bullet
   layers:
   - Default
   - TransparentFX

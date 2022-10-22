@@ -55,9 +55,9 @@ public class Enemy : Entity
     {
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Player player = collision.GetComponent<Player>();
+        Player player = collision.collider.GetComponent<Player>();
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("DAMAGE");
