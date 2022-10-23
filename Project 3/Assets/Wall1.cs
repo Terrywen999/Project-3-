@@ -4,28 +4,10 @@ using UnityEngine;
 
 public class Wall1 : Entity
 {
-    public int wall1Health = 5;
+    public int wall1Health;
     private Bullet bullet; 
     int damage;
   
-    private void Update()
-    {
-        //damage = bullet.GetComponent<Bullet>().bulletDamage;
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Wall1 wall1 = collision.GetComponent<Wall1>();
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            wall1Health -= collision.gameObject.GetComponent<Bullet>().bulletDamage;
-            //TakeDamage(damage);
-            
-        }
-        if (wall1Health <= 0)
-        {
-           Destroy(gameObject);
-        }
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -39,7 +21,7 @@ public class Wall1 : Entity
         if (wall1Health <= 0)
         {
             Destroy(gameObject);
-            AstarPath.active.Scan();
+            AstarPath.active.Scan();    
         }
     }
 }

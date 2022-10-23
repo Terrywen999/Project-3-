@@ -372,7 +372,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12.55
+  orthographic size: 6.92
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2217,6 +2217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -2531,18 +2532,26 @@ MonoBehaviour:
     cooldown: 5
     isCooldown: 0
     ability: 49
+    id: 1
+    wall1: {fileID: 9105773727292101356, guid: 1815eaaac87ce304aa7d60343722ab8f, type: 3}
   - abilityImage1: {fileID: 831863710}
     cooldown: 5
     isCooldown: 0
     ability: 50
+    id: 0
+    wall1: {fileID: 0}
   - abilityImage1: {fileID: 966479528}
     cooldown: 5
     isCooldown: 0
     ability: 51
+    id: 3
+    wall1: {fileID: 5291252191962366655, guid: 0206dfa7ea761054d9b8e721ab0b6db7, type: 3}
   - abilityImage1: {fileID: 1225397484}
     cooldown: 5
     isCooldown: 0
     ability: 52
+    id: 0
+    wall1: {fileID: 0}
 --- !u!1 &1632068739
 GameObject:
   m_ObjectHideFlags: 0

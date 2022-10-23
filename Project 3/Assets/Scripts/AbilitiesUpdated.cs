@@ -9,17 +9,21 @@ public class Ability {
     public float cooldown;
     public bool isCooldown = false;
     public KeyCode ability;
+    public int id;
+    public GameObject wall1;
+}
+
+public enum wallSkill
+{
+    Wall1,
+    Wall2,
+    Wall3,
+    Wall4
 }
 
 public class AbilitiesUpdated : MonoBehaviour
 {
-    private enum wallSkill
-    {
-        Wall1,
-        Wall2,
-        Wall3,
-        Wall4
-    }
+   
 
     Vector2 mousePos = Vector2.zero;
     public Vector2 targetGeneratePos;
@@ -55,7 +59,15 @@ public class AbilitiesUpdated : MonoBehaviour
             if (Input.GetKey(a.ability) && a.isCooldown == false) {
                 a.isCooldown = true;
                 a.abilityImage1.fillAmount = 0;
-                Instantiate(wall1, targetGeneratePos, player.rotation);
+                if(a.id == 3) 
+                {
+                Instantiate(a.wall1, player.position, player.rotation);
+                }
+                else
+                {
+                 Instantiate(a.wall1, targetGeneratePos, player.rotation);
+                }
+
                 AstarPath.active.Scan();
             } 
 
