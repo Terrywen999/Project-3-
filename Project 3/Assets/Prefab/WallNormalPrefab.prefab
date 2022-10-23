@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9105773727292101354}
   - component: {fileID: 9105773727292101357}
   - component: {fileID: 518241123393117868}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WallNormalPrefab
   m_TagString: Rebound
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 9105773727292101356}
   m_LocalRotation: {x: -0, y: -0, z: 0.37512347, w: 0.92697483}
   m_LocalPosition: {x: -15.24, y: 5.95, z: 0}
-  m_LocalScale: {x: 3.7398646, y: 1, z: 1}
+  m_LocalScale: {x: 2.948771, y: 0.22113, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -124,5 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea97e33f2aebda4da199d75b3741c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  wall1Health: 5
+  health: 15
+  wall1Health: 15

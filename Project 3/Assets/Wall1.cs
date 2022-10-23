@@ -39,6 +39,7 @@ public class Wall1 : Entity
         if (wall1Health <= 0)
         {
             Destroy(gameObject);
+            AstarPath.active.Scan();
         }
     }
 }

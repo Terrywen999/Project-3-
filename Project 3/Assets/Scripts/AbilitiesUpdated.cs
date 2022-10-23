@@ -56,6 +56,7 @@ public class AbilitiesUpdated : MonoBehaviour
                 a.isCooldown = true;
                 a.abilityImage1.fillAmount = 0;
                 Instantiate(wall1, targetGeneratePos, player.rotation);
+                AstarPath.active.Scan();
             } 
 
             if (a.isCooldown)

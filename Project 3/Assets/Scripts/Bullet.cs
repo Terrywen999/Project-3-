@@ -7,11 +7,11 @@ public class Bullet : Entity
     private Rigidbody2D rb;
     Vector3 lastVelocity;
 
-    public float speed = 5f;
+    public float speed;
 
     int hitTimes;
 
-    public int bulletDamage = 1;
+    public int bulletDamage = 1;    
 
     private void Awake()
     {
@@ -24,6 +24,16 @@ public class Bullet : Entity
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //bullet hit enemy
+        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            enemy.TakeDamage(bulletDamage);
+
+            Destroy(gameObject);
+        }
+        //bullet hit enemy END.
 
         //bullet hit wall and rebound.
         if (collision.gameObject.CompareTag("Rebound"))
@@ -46,18 +56,4 @@ public class Bullet : Entity
         //bullet hit player and lose 1 health END 
     }
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //bullet hit enemy
-        Enemy enemy = collision.GetComponent<Enemy>();
-        
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            enemy.TakeDamage(bulletDamage);
-
-            Destroy(gameObject);
-        }
-        //bullet hit enemy END.
-    }
 }

@@ -6,9 +6,10 @@ public class Enemy : Entity
 {
     public int damage = 10;
 
-   
+    public Vector3 direction;
 
     public GameObject player;
+    public GameObject range;
 
     public Transform playerTrans;
 
@@ -22,7 +23,7 @@ public class Enemy : Entity
     public Transform firePoint;
     public float bulletForce = 20f;
     private float nextTimeToFire = .5f;
-    public float fireRate = 1f;
+    public float fireRate;
     //private float nextSpawnTime = 1f;
 
     //public GameObject enemyPrefab;
@@ -31,6 +32,7 @@ public class Enemy : Entity
         rb = this.GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
         playerTrans = player?.GetComponent<Transform>();
+        range = GameObject.FindWithTag("Range");
     }
 
     private void Update()
@@ -39,7 +41,7 @@ public class Enemy : Entity
         {
             return;
         }
-        Vector3 direction = playerTrans.position - transform.position;
+        direction = playerTrans.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
         direction.Normalize();
@@ -48,8 +50,8 @@ public class Enemy : Entity
 
     private void FixedUpdate()
     {
-        moveCharacter(movement);
-        EnemyShoot();
+        //moveCharacter(movement);
+        //EnemyShoot();
     }
     void moveCharacter(Vector2 direction)
     {
@@ -64,15 +66,15 @@ public class Enemy : Entity
             player.TakeDamage(damage);
             Destroy(gameObject);
         }
+        
     }
-
-    void EnemyShoot()
+    public void EnemyShoot()
     {
         if (Time.time >= nextTimeToFire)
         {
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+            rb.AddForce(direction * bulletForce, ForceMode2D.Impulse);
             Destroy(bullet, 5f);
 
             nextTimeToFire = Time.time + 1f / fireRate;
