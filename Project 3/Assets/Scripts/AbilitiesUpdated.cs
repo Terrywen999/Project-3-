@@ -55,7 +55,7 @@ public class AbilitiesUpdated : MonoBehaviour
             if (Input.GetKey(a.ability) && a.isCooldown == false) {
                 a.isCooldown = true;
                 a.abilityImage1.fillAmount = 0;
-                Instantiate(wall1, targetGeneratePos, Quaternion.identity);
+                Instantiate(wall1, targetGeneratePos, player.rotation);
             } 
 
             if (a.isCooldown)
