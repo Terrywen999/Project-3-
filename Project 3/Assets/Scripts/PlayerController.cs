@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
 				mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-				transform.localScale = Vector3.one;
+				//transform.localScale = Vector3.one;
 				moveSpeed = startMoveSpeed;
 
         //dash
@@ -66,8 +66,8 @@ public class PlayerController : MonoBehaviour
 	{
       
 
-		Vector2 desiredVelocity = movement * moveSpeed;
-		rb.velocity = Vector2.SmoothDamp(rb.velocity, desiredVelocity, ref velocity, moveSmooth);
+		//Vector2 desiredVelocity = movement * moveSpeed;
+		//rb.velocity = Vector2.SmoothDamp(rb.velocity, desiredVelocity, ref velocity, moveSmooth);
 
 		Vector2 lookDir = mousePos - rb.position;
 		float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
