@@ -17,8 +17,7 @@ public class BoxMovement : MonoBehaviour
     float posX, posY, angle = 0f;
     private void Update()
     {
-        posX = rotationCenter.position.x + Mathf.Cos(angle) * rotationRadius;
-        posY = rotationCenter.position.y + Mathf.Sin(angle) * rotationRadius;
+        
         transform.position = new Vector2(posX, posY);
         //angle = angle + Time.deltaTime * angularSpeed;
 
@@ -27,12 +26,16 @@ public class BoxMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
+            posX = rotationCenter.position.x + Mathf.Cos(angle) * rotationRadius;
+            posY = rotationCenter.position.y + Mathf.Sin(angle) * rotationRadius;
             gameObject.transform.Rotate(0f, 0f, 10f * Time.deltaTime * rotateSpeed);
 
             angle = angle + Time.deltaTime * rotateSpeed;
         }
         else if (Input.GetKey(KeyCode.D))
         {
+            posX = rotationCenter.position.x + Mathf.Cos(angle) * rotationRadius;
+            posY = rotationCenter.position.y + Mathf.Sin(angle) * rotationRadius;
             gameObject.transform.Rotate(0f, 0f, -10f * Time.deltaTime * rotateSpeed);
 
             angle = angle - Time.deltaTime * rotateSpeed;
