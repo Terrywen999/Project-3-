@@ -16,6 +16,8 @@ public class Shoot : MonoBehaviour
 
     public Text bulletAmountText;
 
+    bool filling;
+
    
     private void Start()
     {
@@ -52,17 +54,18 @@ public class Shoot : MonoBehaviour
     }
     void addBullet()
     {
-        if(bulletAmount < bulletMax)
+        if(bulletAmount < bulletMax && filling == false)
         {
             StartCoroutine(fillBullet());
+            filling = true;
         }
+        
     }
 
     IEnumerator fillBullet()
     {
         yield return new WaitForSeconds(fillTime);
         bulletAmount++;
+        filling = false;
     }
-
-    
 }

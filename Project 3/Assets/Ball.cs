@@ -12,6 +12,11 @@ public class Ball : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
+
+    private void Update()
+    {
+        lastVelocity = rb.velocity;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
        
