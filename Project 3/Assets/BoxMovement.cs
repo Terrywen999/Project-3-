@@ -18,7 +18,7 @@ public class BoxMovement : MonoBehaviour
     private void Update()
     {
         
-        transform.position = new Vector2(posX, posY);
+        
         //angle = angle + Time.deltaTime * angularSpeed;
 
         if (angle >= 360f)
@@ -29,7 +29,7 @@ public class BoxMovement : MonoBehaviour
             posX = rotationCenter.position.x + Mathf.Cos(angle) * rotationRadius;
             posY = rotationCenter.position.y + Mathf.Sin(angle) * rotationRadius;
             gameObject.transform.Rotate(0f, 0f, 10f * Time.deltaTime * rotateSpeed);
-
+            transform.position = new Vector2(posX, posY);
             angle = angle + Time.deltaTime * rotateSpeed;
         }
         else if (Input.GetKey(KeyCode.D))
@@ -37,7 +37,7 @@ public class BoxMovement : MonoBehaviour
             posX = rotationCenter.position.x + Mathf.Cos(angle) * rotationRadius;
             posY = rotationCenter.position.y + Mathf.Sin(angle) * rotationRadius;
             gameObject.transform.Rotate(0f, 0f, -10f * Time.deltaTime * rotateSpeed);
-
+            transform.position = new Vector2(posX, posY);
             angle = angle - Time.deltaTime * rotateSpeed;
         }
     }

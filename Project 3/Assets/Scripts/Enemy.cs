@@ -18,6 +18,8 @@ public class Enemy : Entity
     private Vector2 movement;
     public  float moveSpeed =5f;
 
+    public Animator explosion;
+    
     //enemy shoot 
     public GameObject bulletPrefab;
     public Transform firePoint;
@@ -59,14 +61,28 @@ public class Enemy : Entity
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Player player = collision.collider.GetComponent<Player>();
+        //Player player = collision.collider.GetComponent<Player>();
+        //if (collision.gameObject.CompareTag("Player"))
+        //{
+        //    Debug.Log("DAMAGE");
+        //    player.TakeDamage(damage);
+        //    Destroy(gameObject);
+        //}
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Player player = collision.gameObject.GetComponent<Player>();
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("DAMAGE");
             player.TakeDamage(damage);
+            explosion.Play("Explosion");
+
             Destroy(gameObject);
+            
         }
-        
     }
     public void EnemyShoot()
     {

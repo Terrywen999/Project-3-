@@ -31,7 +31,7 @@ public class Bullet : Entity
         {
             enemy.TakeDamage(bulletDamage);
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         //bullet hit enemy END.
 
@@ -47,16 +47,16 @@ public class Bullet : Entity
         //bullet hit wall and rebound.END
 
         //bullet hit player and lose 1 health. 
-        Player player = collision.gameObject.GetComponent<Player>();
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            //player.TakeDamage(1);
-            //Destroy(gameObject);
-            var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
+        //Player player = collision.gameObject.GetComponent<Player>();
+        //if (collision.gameObject.CompareTag("Player"))
+        //{
+        //    //player.TakeDamage(1);
+        //    //Destroy(gameObject);
+        //    var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
 
-            rb.velocity = direction * Mathf.Max(speed, 0f);
-            bulletDamage += 3;
-        }
+        //    rb.velocity = direction * Mathf.Max(speed, 0f);
+        //    bulletDamage += 3;
+        //}
         //bullet hit player and lose 1 health END 
     }
 

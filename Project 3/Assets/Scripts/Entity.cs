@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    public int health = 20;
+    public int health = 1;
     
     public void TakeDamage(int amount)
     {
