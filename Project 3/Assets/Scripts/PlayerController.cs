@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
 
 	Vector2 movement = Vector2.zero;
 	Vector2 velocity = Vector2.zero;
-
 	Vector2 mousePos = Vector2.zero;
 
 
@@ -35,39 +34,18 @@ public class PlayerController : MonoBehaviour
 	void Update() {
 				movement.x = Input.GetAxisRaw("Horizontal");
 				movement.y = Input.GetAxisRaw("Vertical");
-
 				mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 				//transform.localScale = Vector3.one;
 				moveSpeed = startMoveSpeed;
-
-        //dash
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-			moveSpeed += dashBoost;
-			Debug.Log(dashTime);
-			once = true;
-			dashTime = startDashTime;
-        }
-		if(dashTime <0 && once == true)
-        {
-			moveSpeed -= dashBoost;
-			once = false;
-        }
-        else
-        {
-			dashTime -= Time.deltaTime;
-        }
-		//dashEnd
-		
 	}
 
 	private void FixedUpdate()
 	{
       
 
-		//Vector2 desiredVelocity = movement * moveSpeed;
-		//rb.velocity = Vector2.SmoothDamp(rb.velocity, desiredVelocity, ref velocity, moveSmooth);
+		Vector2 desiredVelocity = movement * moveSpeed;
+		rb.velocity = Vector2.SmoothDamp(rb.velocity, desiredVelocity, ref velocity, moveSmooth);
 
 		Vector2 lookDir = mousePos - rb.position;
 		float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;

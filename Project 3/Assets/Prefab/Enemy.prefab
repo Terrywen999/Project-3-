@@ -47,7 +47,6 @@ GameObject:
   - component: {fileID: 6226366475933511575}
   - component: {fileID: 102744076083341956}
   - component: {fileID: 8300050118360494969}
-  - component: {fileID: 310352845364651110}
   - component: {fileID: 8128648609328173478}
   - component: {fileID: -4036675060021966232}
   m_Layer: 0
@@ -280,21 +279,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
---- !u!114 &310352845364651110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9116913307776241815}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4f5f528fb206474e9a0039bca7bfda0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBtwSpawns: 0
-  startTimeBtwSpawns: 0.05
-  echo: {fileID: 6750059008444310018, guid: 58f1309f7ac60594882ba367f3456223, type: 3}
 --- !u!96 &8128648609328173478
 TrailRenderer:
   serializedVersion: 2

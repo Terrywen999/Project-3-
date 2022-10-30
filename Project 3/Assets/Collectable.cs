@@ -2,35 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class ItemCollection
+{
+    public GameObject item;
+    public int id;
+}
+
 public class Collectable : MonoBehaviour
 {
-    private Inventory inventory;
-    public GameObject itemButton;
-    public Item itemType;
+    public ItemCollection[] allItems;
+    public Transform player;
 
     private void Start()
     {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        player = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        foreach (ItemCollection i in allItems)
         {
-            //for (int i = 0; i < inventory.slots.Length; i++)
-            //{
-            //    if (inventory.isFull[i] == false)
-            //    {
-            //        inventory.isFull[i] = true;
-            //        inventory.AddItem(itemType);
-            //        Instantiate(itemButton, inventory.slots[i].transform, false);
-            //        Destroy(gameObject);
-            //        break;
-            //    }
-            //}
-
-            inventory.AddItem(itemType);
-            Destroy(gameObject);
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                if (i.id == 1)
+                {
+                    Instantiate(i.item, player.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
+                if (i.id == 2)
+                {
+                    Instantiate(i.item, player.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
+            }
         }
+
     }
 }
