@@ -34,6 +34,16 @@ public class Collectable : MonoBehaviour
                     Instantiate(i.item, player.position, Quaternion.identity);
                     Destroy(gameObject);
                 }
+                if (i.id == 3)
+                {
+                    Instantiate(i.item, player.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
+                if(i.id == 4)
+                {
+                    Instantiate(i.item, player.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
             }
         }
 

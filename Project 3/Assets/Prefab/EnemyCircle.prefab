@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 788197285350837949}
   - component: {fileID: -8925471464665226240}
   - component: {fileID: -4642997585720386483}
+  - component: {fileID: -22648825711249822}
   m_Layer: 0
   m_Name: EnemyCircle
   m_TagString: Enemy
@@ -210,3 +211,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
+--- !u!114 &-22648825711249822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2411169261459646701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8251fd7362a20458acb5342fe22130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  damage: 10
+  direction: {x: 0, y: 0, z: 0}
+  player: {fileID: 0}
+  range: {fileID: 0}
+  playerTrans: {fileID: 0}
+  moveSpeed: 5
+  explosion: {fileID: 0}
+  bulletPrefab: {fileID: 0}
+  firePoint: {fileID: 0}
+  bulletForce: 20
+  fireRate: 0
