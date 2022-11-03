@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class TimeCount : MonoBehaviour
 {
-    float currentTime = 0f;
+    public float currentTime = 0f;
 
     [SerializeField]
-    Text countTime;
+    public Text countTime;
 
     private void Update()
     {
