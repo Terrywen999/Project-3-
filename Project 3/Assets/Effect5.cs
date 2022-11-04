@@ -20,17 +20,11 @@ public class Effect5 : MonoBehaviour
 
     private void Update()
     {
-        Vector3 direction = transform.position - enemy.transform.position;
-        float angle = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
-        direction.Normalize();
-        movement = direction;
+        
 
     }
-    private void FixedUpdate()
-    {
-        AttractEnemy(movement);
-    }
+   
+    
     IEnumerator WaitTheBomb()
     {
         yield return new WaitForSeconds(5f);
@@ -47,15 +41,12 @@ public class Effect5 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            collision.gameObject.transform.position = gameObject.transform.position;
-        }
+        //if (collision.gameObject.CompareTag("Enemy"))
+        //{
+        //    collision.gameObject.transform.position = gameObject.transform.position;
+        //}
 
     }
 
-    void AttractEnemy(Vector2 direction)
-    {
-        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
-    }
+    
 }
