@@ -30,7 +30,8 @@ Transform:
   m_LocalPosition: {x: -5.2, y: -1.6311, z: 0}
   m_LocalScale: {x: 0.036562, y: 0.036562, z: 0.036562}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1138404761257349697}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect5bomb: {fileID: 2763880276048766320, guid: fb411608e402cd149803ce39beedb290, type: 3}
+  moveSpeed: 5
 --- !u!58 &5343715233140959151
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -115,3 +117,77 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 36.61
+--- !u!1001 &75215233057226518
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5767410169364506646}
+    m_Modifications:
+    - target: {fileID: 1064919628000095575, guid: 885f95ee485017e47972d993c5815757, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064919628000095575, guid: 885f95ee485017e47972d993c5815757, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064919628000095575, guid: 885f95ee485017e47972d993c5815757, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064919628000095575, guid: 885f95ee485017e47972d993c5815757, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064919628000095575, guid: 885f95ee485017e47972d993c5815757, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064919628000095575, guid: 885f95ee485017e47972d993c5815757, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064919628000095575, guid: 885f95ee485017e47972d993c5815757, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064919628000095575, guid: 885f95ee485017e47972d993c5815757, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064919628000095575, guid: 885f95ee485017e47972d993c5815757, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064919628000095575, guid: 885f95ee485017e47972d993c5815757, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064919628000095575, guid: 885f95ee485017e47972d993c5815757, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064919628000095592, guid: 885f95ee485017e47972d993c5815757, type: 3}
+      propertyPath: m_Name
+      value: CFXR2 Power Aura (Loop)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396156250386781283, guid: 885f95ee485017e47972d993c5815757, type: 3}
+      propertyPath: m_Color.g
+      value: 0.83191526
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396156250386781283, guid: 885f95ee485017e47972d993c5815757, type: 3}
+      propertyPath: m_Color.r
+      value: 0.59875333
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396156250386781283, guid: 885f95ee485017e47972d993c5815757, type: 3}
+      propertyPath: m_Intensity
+      value: 0.30647996
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 885f95ee485017e47972d993c5815757, type: 3}
+--- !u!4 &1138404761257349697 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1064919628000095575, guid: 885f95ee485017e47972d993c5815757, type: 3}
+  m_PrefabInstance: {fileID: 75215233057226518}
+  m_PrefabAsset: {fileID: 0}
