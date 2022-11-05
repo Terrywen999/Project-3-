@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
- 
-    
-    
-    private void Start()
+
+    bool isAttracting;
+    Vector3 targetPos;
+
+    private void Update()
     {
-       
+        if(isAttracting)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * 10);
+        }
+        
     }
 
-
+    public void StartAttracting(Transform transform)
+    {
+        isAttracting = true;
+        targetPos = transform.position;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
