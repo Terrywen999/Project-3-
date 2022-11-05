@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1332177}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,13 +438,13 @@ GameObject:
   - component: {fileID: 1045519036}
   - component: {fileID: 1045519038}
   - component: {fileID: 1045519037}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1045519036
 Transform:
   m_ObjectHideFlags: 0
@@ -786,13 +786,13 @@ GameObject:
   - component: {fileID: 1553111795}
   - component: {fileID: 1553111797}
   - component: {fileID: 1553111796}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1553111795
 Transform:
   m_ObjectHideFlags: 0
@@ -987,7 +987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7549807293178229599, guid: e6987670bf64a5346ad4ef49277426e3, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7549807293178229599, guid: e6987670bf64a5346ad4ef49277426e3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1194,13 +1194,13 @@ GameObject:
   - component: {fileID: 1991527099}
   - component: {fileID: 1991527101}
   - component: {fileID: 1991527100}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1991527099
 Transform:
   m_ObjectHideFlags: 0
@@ -1305,13 +1305,13 @@ GameObject:
   - component: {fileID: 2126174308}
   - component: {fileID: 2126174310}
   - component: {fileID: 2126174309}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2126174308
 Transform:
   m_ObjectHideFlags: 0
